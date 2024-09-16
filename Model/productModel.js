@@ -19,6 +19,9 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.BOOLEAN
 
         }
+    },
+        {
+            timestamp: false //To stop currentAt @ updateAt time
     });
 
     return Product;
