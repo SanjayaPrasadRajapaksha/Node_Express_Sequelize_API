@@ -23,8 +23,11 @@ app.get('/', (req, res) => {
 
 //routers
 
-const router = require('./Routes/productRouter');
-app.use('/api/products', router);
+const productsRouter = require('./Routes/productRouter');
+app.use('/api/products', productsRouter);
+
+const reviewRouter = require('./Routes/reviewRouter');
+app.use('/api/reviews', reviewRouter);
 
 
 

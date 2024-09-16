@@ -1,5 +1,5 @@
 
-const db = require('../Model');
+const db = require("../Model");
 
 //create main model
 
@@ -87,13 +87,31 @@ const publishedProducts = async (req, res) => {
     res.status(200).send(poducts);
 }
 
+//isFindByTitle
+
+const isFindByTitle = async (req, res) => {
+
+    let title = req.body.title;
+    let product = await Product.findOne(
+        {
+            where: {
+                title
+            }
+        }
+    )
+   // res.status(200).send(product ? true:false);
+    res.status(200).send(product);
+}
+
+
 module.exports = {
     addProduct,
     getAllProduct,
     getOneProduct,
     updateProduct,
     deleteProduct,
-    publishedProducts
+    publishedProducts,
+    isFindByTitle
 }
 
 
